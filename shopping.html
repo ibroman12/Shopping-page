@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>shopping website</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    :root{
+      --color: white;
+      --bkg1: orangered;
+      --bkg2: black;
+      --bkg: black;
+      --shadow: 2px 2px 40px -15px white;
+    }
+    .dark{
+      --color: orange;
+      --bkg2: white;
+      --bkg: white;
+      --color: black;
+      --shadow: 2px 2px 40px -15px black;
+    }
+    body{
+      background: var(--bkg);
+    }
+    .shopping {
+        box-shadow: var(--shadow);
+        min-height: 70px;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .cart {
+        flex-wrap: wrap;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-left: 20px;
+        color: orange;
+        margin-top: 10px;
+    }
+
+    header ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 40px;
+        flex-wrap: wrap;
+        gap: 20px;
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    header a{
+        text-decoration: none;
+        color: var(--color);
+    }
+    li{
+        list-style-type: none;
+    }
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 50px;
+    }
+
+    .title p {
+        width: 270px;
+        font-size: 22px;
+        letter-spacing: 2px;
+        line-height: 2.3rem;
+        color: var(--color);
+    }
+
+    .title img {
+        height: 400px;
+        width: 400px;
+        border-radius: 0px 0px 0px 0px;
+    }
+
+    .title button {
+        padding: 10px 20px;
+        font-size: 22px;
+        background: var(--bkg1);
+        color: white;
+        border-radius: 20px;
+        border: none;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .gallery {
+        margin-left: 15px;
+        text-align: center;
+    }
+
+    .gallery img {
+        height: 400px;
+        width: 400px;
+        display: inline-flex;
+        position: relative;
+        margin: 10px;
+        border-radius: 10px;
+
+        &:hover {
+            transform: scale(1.1);
+            border-radius: 10px;
+        }
+    }
+
+    .gallery h1 {
+        background: var(--bkg1);
+        color: white;
+        padding: 10px 1px;
+        width: 100%;
+        transition: all 2s;
+        animation: spin 10s linear infinite;
+    }
+
+    .gallery p {
+        padding: 20px;
+        font-size: 20px;
+        color: var(--color);
+        animation: pin 20s linear infinite;
+    }
+    .shopping2{
+    }
+    .shopping2 img{
+        width: 300px;
+        height: 300px;
+        margin: 10px;
+        border-radius: 10px;
+        border-bottom: 2px solid red;
+        border-right: 2px solid red;
+        &:hover{
+        transform: scale(1.1);
+    }
+    }
+    .shopping2 h1{
+        background: var(--bkg1);
+        padding: 5px 15px;
+        text-align: center;
+        color: white;
+    }
+    .shopping2 p{
+        padding: 10px 20px;
+        font-size: 20px;
+        color: var(--color);
+    }
+    footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+    footer .logo2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 3px;
+    }
+    footer .logo2 img{
+        height: 50px;
+        background: white;
+        padding: 10px 10px;
+        border-radius: 50%;
+    }
+    .logo2 h1{
+        margin-left: 8px;
+        color: orange;
+    }
+    footer li,a{
+        list-style-type: none;
+        font-size: 22px;
+        margin: 8px;
+        color: white;
+        text-decoration: none;
+        &:hover{
+        transform: scale(1.1);
+        color: dodgerblue;
+    }
+    }
+    .subscribe p{
+        font-size: 17px;
+        width: 200px;
+        line-height: 1.5rem;
+        color: white;
+    }
+    .subscribe input{
+        border: none;
+        outline: none;
+        height: 33px;
+        border: 2px solid #848BD3;
+        padding-left: 10px;
+        border-radius: 5px;
+        font-size: 17px;
+        width: 250px;
+        &:hover{
+        border: 2px solid green;
+    }
+    }
+    .subscribe button{
+        padding: 10px 20px;
+        border: none;
+        width: 250px;
+        margin-left: 10px;
+        font-size: 20px;
+        border-radius: 10px;
+        &:hover{
+        background: green;
+        color: white;
+    }
+    }
+    .subscribe .tbo:hover{
+        background: orange;
+        border-radius: 50%;
+        transform: scale(1.1);
+    }
+    .down{
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .down img{
+        margin: 20px;
+        height: 120px;
+        &:hover{
+            transform: scale(1.1);
+    }
+    }
+    .foter{
+        background: black;
+        margin-top: 50px;
+    }
+    
+    .form{
+        background: #DAECFF;
+        width: 400px;
+        height: 0px;
+        margin-top: 20px;
+        text-align: center;
+        border-radius: 10px;
+        padding: 10px;
+        position: fixed;
+        right: 100px;
+        z-index: 1;
+        overflow: hidden;
+        display: none;
+        transition: all 0.5s;
+        animation: spon 2s linear forwards;
+    }
+    .form input{
+        width: 90%;
+        height: 50px;
+        margin: 10px;
+        font-size: 25px;
+        padding-left: 20px;
+        border: none;
+        outline-color: rebeccapurple;
+        border-radius: 10px;
+        transition: all 0.5s;
+    }
+    .form h2{
+        color: dodgerblue;
+        font-size: 35px;
+    }
+    .row{
+        background: dodgerblue;
+        color: white;
+    }
+    .row:hover{
+        background: transparent;
+        border: 2px solid green;
+        border-radius: 20px;
+        color: green;
+    }
+    .form::before{
+        content: "";
+        position: absolute;
+        border: 250px solid transparent;
+        border-right-color: #C5C9FF;
+        top: -30px;
+        transform: translate(-50%);
+        z-index: -1;
+    }
+   .form::after {
+        content: "";
+        position: absolute;
+        border: 200px solid transparent;
+        border-left-color: #C5C9FF;
+        top: 20px;
+        transform: translate(-50%);
+        z-index: -1;
+    }
+    header button{
+        border: none;
+        border: 2px solid #A6BAFF;
+        color: green;
+        padding: 10px 26px;
+        position: relative;
+        right: 10px;
+        top: -5px;
+        font-size: 20px;
+        background: none;
+        border-radius: 100px;
+    }
+     .menus{
+         position: fixed;
+         top: 0;
+         left: 0;
+         height: 100%;
+         width: 250px;
+         background: #EEE5F3;
+         z-index: 1;
+         flex-direction: column;
+         display: grid;
+         display: none;
+         grid-template-columns: repeat(2,1fr);
+         grid-template-rows: repeat(2,1fr);
+     }
+     .menus img{
+         height: 55px;
+         position: absolute;
+         right: 0;
+         top: 0;
+     }
+     .menu{
+         height: 50px;
+         background: #F3E2FF;
+         border-radius: 50%;
+         display: none;
+     }
+     #moon{
+       height: 30px;
+       width: 30px;
+       position: absolute;
+       left: 300px;
+       top: 29px;
+       background: none;
+       border-radius: 50px;
+       border: 1px solid #B8BCEC;
+     }
+    @keyframes spon {
+        100%{
+            height: 450px;
+        }
+    }
+    @media (max-width: 800px){
+    }
+    @media (max-width: 480px){
+        footer{
+            display: block;
+            align-items: center;
+            justify-content: center;
+        }
+        .down{
+            display: block;
+        }
+        #moon{
+          position: absolute;
+          top: 20px;
+        }
+        .down img{
+            height: 100px;
+        }
+        .gallery img{
+            width: 90%;
+            height: 350px;
+        }
+        .shopping2 img{
+            width: 90%;
+            height: 350px;
+        }
+        .ul1{
+            display: none;
+        }
+        .menus{
+            width: 100%;
+        }
+        .menu{
+            display: block;
+        }
+        .form{
+            position: relative;
+            left: 10px;
+            top: 50px;
+        }
+    }
+    @keyframes pin {
+        100% {
+            transform: rotateY(360deg);
+            background: ;
+            color: white;
+
+        }
+    }
+    @keyframes spin {
+        100% {
+            width: 1%;
+            background: dodgerblue;
+        }
+    }
+</style>
+
+<body class="dark">
+    <div class="shopping">
+        <div class="cart">
+            <header class="">
+                <div class="logo">
+                    <img src="cart.png" alt="" height="40px">
+                    <h1>shopping</h1>
+                </div>
+                <img src="moon.png" alt="" id="moon">
+                <ul  class="ul1">
+                    <li><a class="" href="#">Home</a></li>
+                    <li><a class="" href="#">About</a></li>
+                    <li><a class="" href="#">contact</a></li>
+                    <li><a class="" href="#">Gallary</a></li>
+                    <button onclick="show()">Signup</button>
+                </ul>
+                <img src="bx-menu.svg" alt="" class="menu" onclick="menu()">
+                <div class="menus for1">
+                    <img src="bx-x (2).svg" alt="" onclick="clo()">
+                  <ul>
+                      <li><a class="" href="#">Home</a></li>
+                      <li><a class="" href="#">About</a></li>
+                      <li><a class="" href="#">contact</a></li>
+                      <li><a class="" href="#">Gallary</a></li>
+                      <button onclick="show()">Signup</button>
+                  </ul>
+                </div>
+            </header>
+          </div>
+         </div>
+             <div class="form" id="block">
+                <form action="input">
+                     <h2>Sign up</h2>
+                   <input type="text" placeholder="FullName"  required>
+                  <input type="email" placeholder="email" required>
+                     
+                  <input type="password" placeholder="password"  required>
+                     
+                 <input type="submit" value="LONG" class="row" onclick="choose()">
+            </form>
+        </div>
+    <div>
+        <div class="title">
+            <div>
+                <p>this is we are displayed out talent about shopping cart and everything else you that you can get</p>
+                <button>shops</button>
+            </div>
+            <div id="demo">
+                <img src="exclusive.png" alt="" onclick="myFunc()">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="gallery">
+            <h1>Gallary</h1>
+            <p>this is gallery of my shop you can get the title of my page story</p>
+            <img src="buy-1.jpg" alt="">
+            <img src="product-1.jpg" alt="">
+            <img src="product-6.jpg" alt="">
+            <img src="product-4.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="shopping2">
+        <div>
+            <h1>shopping</h1>
+            <p>this is place of market we paid all of them if you need contact me click cart button after you will the price of your order will be excepted you </p>
+        </div>
+        <div class="shopso">
+            <img src="product-2.jpg" alt="">
+            <img src="product-10.jpg" alt="">
+            <img src="product-7.jpg" alt="">
+            <img src="product-5.jpg" alt="">
+            <img src="product-11.jpg" alt="">
+            <img src="knit-athletic-sneakers-gray.jpg" alt="">
+            <img src="athletic-cotton-socks-6-pairs.jpg" alt="">
+            <img src="men-athletic-shoes-black.jpg" alt="">
+            <img src="men-athletic-shoes-green.jpg" alt="">
+        </div>
+    </div>
+       <div>
+           <div class="foter">
+               <footer class="">
+                   <div class="logo2">
+                       <img src="cart.png" alt="">
+                       <h1>shopping</h1>
+                   </div>
+                   <ul class="ul4">
+                       <li><a class="" href="#">Home</a></li>
+                       <li><a class="" href="#">About</a></li>
+                       <li><a class="" href="#">contact</a></li>
+                       <li><a class="" href="#">Gallary</a></li>
+                   </ul>
+                  <div class="products">
+                    <ul>
+                        <li class="pro"><a class="" href="#">products</a></li>
+                       <li class="pro"><a class="" href="#">privacy</a></li>
+                        <li class="pro"><a class="" href="#">policy</a></li>
+                        <li class="pro"><a class="" href="#">issues</a></li>
+                    </ul>
+                 </div>
+                 <div class="subscribe">
+                     <ul>
+                         <p>subscribe if you liked this shopping  and social  media  accounts contact with us  as applications</p>
+                         <img src="facebook.png" alt="" height="60px" class="tbo">
+                         <img src="twitter.png" alt="" height="60px" class="tbo">
+                         <img src="telegram.png" alt="" height="60px" class="tbo">
+                         <li><a class="" href="#"><input type="text" placeholder="subscribe" required></a></li>
+                      <button type="submit">subscribe</button>
+                     </ul>
+                 </div>
+               </footer>
+               <div class="down">
+                   <img src="play-store.png" alt="">
+                   <img src="app-store.png" alt="">
+               </div>
+           </div>
+       </div>
+       <script>
+           let cost = 100;
+           function myFunc(){
+               document.getElementById('demo').innerHTML = cost;
+           }
+           
+           function show(){
+              const shows = document.getElementById('block').style.display = "block";
+               if (shows) {
+                   
+               }else{
+                   document.getElementById('block').style.display = "none";
+                   shows.remove();
+               }
+           }
+           
+           function choose(){
+               document.getElementById('block').style.display = "none";
+               return;
+           }
+           
+           function menu(){
+               document.querySelector('.menus').style.display = "block";
+           }
+           function clo(){
+               document.querySelector('.menus').style.display = "none";
+           }
+           
+           const moon = document.getElementById('moon');
+           moon.onclick = function(){
+             document.body.classList.toggle("dark");
+             if(document.body.classList.contains('dark')){
+               moon.src = "moon.png";
+             }else{
+               moon.src = "sun.png";
+             }
+           }
+       </script>
+</body>
+
+</html>

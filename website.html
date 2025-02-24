@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>website</title>
+</head>
+  <style>
+    *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+    }
+    body{
+     background: var(--back);
+     color: var(--color);
+    }
+    :root{
+     --color: black;
+     --back: white;
+    }
+    .dark-dom{
+       --color: white;
+       --back: black;
+    }
+    .container{
+     background: var(--back);
+     color: var(--color);
+     width: 100%;
+     flex-wrap: wrap;
+     box-shadow: 2px 2px 40px -15px black;
+    }
+    header{
+     display: flex;
+     padding: 15px;
+     align-items: center;
+     justify-content: space-between;
+    }
+    .heder, ul li,a{
+     list-style-type: none;
+     display: inline-block;
+     text-decoration: none;
+     padding: 15px;
+     font-size: 23px;
+     color: var(--color);
+    }
+    h1{
+     font-size: 40px;
+     margin: auto;
+     color: #CD1EE7;
+     position: relative;
+     padding: 15px;
+    }
+    h1::before{
+     content: '';
+     position: absolute;
+     width: 40px;
+     height: 40px;
+     border-left: 5px solid orange;
+     border-bottom: 5px solid orange;
+     bottom: 0;
+     left: 0;
+    }
+     h1::after{
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-top: 5px solid orange;
+        border-right: 5px solid orange;
+        top: 0;
+        right: 0;
+      }
+      .fa{
+       width: 100%;
+       background: transparent ;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+      }
+     .fa,.ppi0 img{
+       width: 100%;
+      }
+      h3{
+       background: transparent;
+       display: flex;
+       width: 150px;
+       position: relative;
+       left: 45%;
+       top: 50px;
+       padding: 15px;
+       font-size: 26px;
+       color: #CD1EE7;
+      }
+      h3::before{
+       content: '';
+       position: absolute;
+       width: 30px;
+       height: 30px;
+       border-left: 5px solid orange;
+       border-bottom: 5px solid orange;
+       bottom: 0;
+       left: 0;
+      }
+      h3::after{
+       content: '';
+       position: absolute;
+       width: 30px;
+       height: 30px;
+       border-top: 5px solid orange;
+       border-right: 5px solid orange;
+       top: 0;
+       right: 0;
+      }
+      .flex{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-evenly;
+       margin-top: 150px;
+      }
+      .kk1,.kk2{
+       width: 350px;
+       height: 300px;
+       display: flex;
+       align-items: center;
+       border-radius: 10px;
+       margin: 10px;
+       box-shadow: 0 0 1px #FF0099, 
+                    0 0 2px #DD00FF, 
+                    0 0 4px #00FFE0, 
+                    0 0 8px #0000;
+                    
+      }
+      .foter{
+       background: var(--back);
+       width: 100%;
+       flex-wrap: wrap;
+       height: 400px;
+       margin-top: 50px;
+       box-shadow: 2px 2px 1px orange,
+                   -2px -2px 1px orange;
+      }
+      footer{
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+      }
+      footer ul li, a img{
+       display: block;
+       width: 100px;
+       justify-content: space-evenly;
+       padding: 10px;
+      }
+      .somalia{
+       background: transparent;
+       font-size: 20px;
+       color: #CD1EE7;
+       position: relative;
+       left: -50px;
+      }
+      h2{
+      }
+      .somalia::before{
+       content: '';
+       position: absolute;
+       bottom: -8px;
+       left: -20px;
+       width: 40px;
+       height: 40px;
+       border-left: 5px solid orange;
+       border-bottom: 5px solid orange;
+      }
+       .somalia::after{
+        content: '';
+        position: absolute;
+        top: -15px;
+        right: -20px;
+        width: 40px;
+        height: 40px;
+        border-top: 5px solid orange;
+        border-right: 5px solid orange;
+       }
+       .io{
+        background: #CD1EE7;
+        position: relative;
+        left: 10vw;
+        border-radius: 50%;
+        
+       }
+       .password, img{
+        background: var(--back);
+        position: relative;
+        left: -15px;
+       }
+  </style>
+<body>
+    <div class="container">
+       <div class="input-cnt">
+          <header>
+              <h1>somalia</h1>
+            <div class="heder">
+              <ul>
+               <li><a class="tf" href="#">Home</a></li>
+               <li><a class="tf" href="#">About</a></li>
+                <li><a class="tf" href="#">Gallery</a></li>
+                <li><a class
+                ="tf" href="#">contact</a></li>
+              </ul>
+              </div>
+              <div class="password">
+               <img src="moon.png" alt="" width="20px" height="24px" id="button">
+              </div>
+          </header>
+       </div>
+    </div>
+        <div class="fa">
+            <div class="ppi0">
+               <img src="pay2.jpg" alt="pay2.jpg" width="300px">
+               <h3>see more</h3>
+            </div>
+        </div>
+           <div class="flex">
+              <div class="ii1">
+                      <img src="pay1.jpeg" alt="" class="kk1">
+                    </div>
+                    <div class="ii2">
+                      <img src="pay3.jpeg" alt="" class="kk2">
+               </div>
+           </div>
+        <div class="foter">
+            <div class="fot">
+               <div class="fo">
+                  <div class="how">
+                    <footer>
+                     <ul>
+                       <li> <img src="facebook.png" alt="facebook.png" height="50px" class="io"></li>
+                     <li> <img src="twitter.png" alt="twitter.png" height="50px"     class="io"></li>
+                     <li> <img src="telegram.png" alt="telegram.png" height="50px" class="io"></li>
+                     </ul>
+                     <div class="ul3">
+                        <ul>
+                         <li> <a class="" href="#">Home</a></li>
+                       <li> <a class="" href="#">About</a></li>
+                       <li> <a class="" href="#">Articles</a></li>
+                       <li> <a class="" href="#">contact</a></li>
+                        </ul>
+                     </div>
+                       <div class="somalia">
+                        <h2>somalia&copy;</h2>
+                       </div>
+                    </footer>
+                  </div>
+               </div>
+            </div>
+        </div>
+    <script>
+     let button = document.getElementById('button');
+     button.onclick = function(){
+      document.body.classList.toggle('dark-dom');
+      if (document.body.classList.contains('dark-dom')) {
+       button.src = "sun.png";
+      }else{
+       button.src = "moon.png";
+      }
+     }
+    </script>
+</body>
+
+</html>
